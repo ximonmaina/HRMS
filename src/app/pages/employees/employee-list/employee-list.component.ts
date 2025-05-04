@@ -1,21 +1,20 @@
-import { AsyncPipe, NgComponentOutlet, NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { AsyncPipe, NgComponentOutlet, NgFor } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { EmployeeService } from '../../../services/employee.service';
+import { TruncateDirective } from '../../../shared/directives/truncate.directive';
 
 @Component({
   selector: 'app-employee-list',
-  imports: [AsyncPipe, NgFor, NgIf, NgComponentOutlet],
+  imports: [AsyncPipe, NgFor, NgComponentOutlet, TruncateDirective],
   templateUrl: './employee-list.component.html',
-  styleUrl: './employee-list.component.css'
+  styleUrl: './employee-list.component.css',
+
 })
 export class EmployeeListComponent {
-  employees$: any;
+  private readonly employeeService = inject(EmployeeService);
+  employees$ = this.employeeService.getEmployees();
   isConfirmationOpen = false;
   confirmDialog: any = null;
-
-  constructor(private readonly employeeService: EmployeeService){
-    this.employees$ = this.employeeService.getEmployees();
-  }
 
   async showConfirmationDialog() {
     this.confirmDialog = await import('../../../shared/components/confirmation-dialog/confirmation-dialog.component').then(

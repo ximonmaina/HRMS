@@ -8,7 +8,7 @@
     <tbody>
         <tr *ngFor="let employee of employees$ | async">
             <td>{{employee.firstName}} {{employee.lastName}}</td>
-            <td>{{employee.position}}</td>
+            <td appTruncate [limit]="10">{{employee.position}}</td>
             <td>
                 <button (click)="showConfirmationDialog()">Delete</button>
             </td>
