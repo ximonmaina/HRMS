@@ -1,0 +1,6 @@
+<div *ngIf="project$ | async as project" class="card">
+    <img [src]="project.logo"/>
+    <div class="card-body">
+        <h3>{{project.name}}</h3>
+    </div>
+</div>

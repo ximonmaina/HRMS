@@ -1,0 +1,8 @@
+<div class="candidate-details">
+    <div>
+        <h2>{{candidate.firstName}} {{candidate.lastName}}</h2>
+        <p>Email: {{candidate.email}}</p>
+        <p>{{candidate.position}}</p>
+    </div>
+    <ng-container *ngComponentOutlet="actionsSelection; inputs: {candidateId: candidate.id}"></ng-container>
+</div>

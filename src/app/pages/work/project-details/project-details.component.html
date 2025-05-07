@@ -1,0 +1,16 @@
+<div class="project-details">
+    <h3>Project Details</h3>
+    <div *ngIf="project$ | async as project">
+        <span>Project Name: {{project.name}}</span>
+        <span>Project Description: {{project.description}}</span>
+        <span>Logo: {{project.logo}}</span>
+        <div class="subprojects">
+            <span>Subprojects:</span>
+            <app-project-card
+                *ngFor="let subProjectId of project.subProjectIds"
+                [projectId]="subProjectId"
+            ></app-project-card>
+        </div>
+        
+    </div>
+</div>
