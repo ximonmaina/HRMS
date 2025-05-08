@@ -7,7 +7,13 @@
     </thead>
     <tbody>
         <tr *ngFor="let employee of employees$ | async">
-            <td>{{employee.firstName}} {{employee.lastName}}</td>
+            <td>
+                <img [ngSrc]="employee.profilePicture" width="20" height="20"/>
+                <a [routerLink]="['/employees/details', employee.id]">
+                    {{employee.firstName}} {{employee.lastName}}
+                </a>
+                
+            </td>
             <td appTruncate [limit]="10">{{employee.position}}</td>
             <td>
                 <button (click)="showConfirmationDialog()">Delete</button>

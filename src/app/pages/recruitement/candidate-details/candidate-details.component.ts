@@ -1,6 +1,6 @@
 import { NgComponentOutlet } from '@angular/common';
 import { Component, Input, OnChanges, SimpleChanges, Type } from '@angular/core';
-import { Candidate } from '../../../infrastructure/types/Candidate';
+import { Candidate } from '../../../infrastructure/types/candidate';
 import { CvEvaluationComponent } from '../components/cv-evaluation/cv-evaluation.component';
 import { InterviewPreparationComponent } from '../components/interview-preparation/interview-preparation.component';
 import { InterviewFeedbackComponent } from '../components/interview-feedback/interview-feedback.component';
