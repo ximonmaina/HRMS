@@ -4,9 +4,13 @@ import { EditEmployeeComponent } from "./edit-employee/edit-employee.component";
 import { EmployeeDetailsComponent } from "./employee-details/employee-details.component";
 import { EmployeeListComponent } from "./employee-list/employee-list.component";
 import { employeeDetailsResolver } from "../../shared/resolvers/employee-details.resolvers";
+import { employeePermissionsInterceptor } from "../../shared/interceptors/employee-permissions.interceptor";
 
 export const routes: Routes = [
-    {path: 'list', component: EmployeeListComponent},
+    {
+        path: 'list',
+        canActivate: [employeePermissionsInterceptor],
+        component: EmployeeListComponent},
     {
         path: 'details/:id', 
         component: EmployeeDetailsComponent,

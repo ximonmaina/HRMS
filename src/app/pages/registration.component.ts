@@ -5,4 +5,4 @@ import { Component } from "@angular/core";
     template:  ``,
     standalone: true
 })
-export class RegistrationComponent {}
+export default class RegistrationComponent {}

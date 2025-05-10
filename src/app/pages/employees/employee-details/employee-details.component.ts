@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Employee } from '../../../infrastructure/types/employee';
-import { LoginComponent } from "../../login.component";
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-employee-details',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './employee-details.component.html',
   styleUrl: './employee-details.component.css'
 })

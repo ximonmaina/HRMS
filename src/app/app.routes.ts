@@ -9,9 +9,7 @@ export const routes: Routes = [
     path: 'registration',
     loadComponent: () => {
       // lazy loading components
-      return import('./pages/registration.component').then(
-        (m) => m.RegistrationComponent
-      );
+      return import('./pages/registration.component');
     },
   },
   {

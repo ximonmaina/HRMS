@@ -2,11 +2,11 @@ import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/cor
 import { Observable } from 'rxjs';
 import { Project } from '../../../infrastructure/types/project';
 import { ProjectService } from '../../../services/project.service';
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe, NgIf, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-project-card',
-  imports: [NgIf, AsyncPipe],
+  imports: [NgIf, AsyncPipe, NgOptimizedImage],
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.css'
 })
