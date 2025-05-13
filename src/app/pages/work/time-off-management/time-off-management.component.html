@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         <!-- Invoke the signal normally in order to read the value -->
-        <tr *ngFor="let request of filteredRequests()">
+        <tr *ngFor="let request of requests()">
             <td>{{request.employeeId}}</td>
             <td>{{request.startDate | date}}</td>
             <td>{{request.endDate | date}}</td>

@@ -22,4 +22,12 @@ export class TimeOffRequestService {
     rejectRequest(id: number) {
         return this.http.patch(`/time-off-requests/${id}`, {status: 'Rejected'});
     }
+
+    approveRequest(id: number) {
+        return this.http.patch(`/time-off-requests/${id}`, { status: 'Approved' });
+      }
+
+    deleteRequest(id: number) {
+        return this.http.delete(`/time-off-requests/${id}`);
+      }
 }

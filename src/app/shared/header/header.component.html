@@ -1,0 +1,17 @@
+<header>
+    <h2>HRMS</h2>
+    <button (click)="notificationsOpen.set(true)" title="View Notifications">
+        You have {{unreadNotifications.length}} unread notifications
+    </button>
+</header>
+<dialog [open]="notificationsOpen()">
+    <h3>Notifications</h3>
+    <ul>
+        <li *ngFor="let notification of notifications()">
+            <h4>{{notification.title}}</h4>
+            <span>{{notification.message}}</span>
+            <button *ngIf="!notification.read" (click)="markAsRead(notification)">Mark as Read</button>
+        </li>
+    </ul>
+    <button (click)="notificationsOpen.set(false)">Close</button>
+</dialog>
